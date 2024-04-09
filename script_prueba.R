@@ -278,3 +278,23 @@ ggplot(pres_region,aes(x = Region, y = pres_pob)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ggsave(paste0(graficas,"pres_region.png"), width = 12,
        height = 8)
+# Imagen de correlacion entre prestadores y ruralidad
+
+correla <- datos_pob_rural %>% 
+  left_join(pres_dpto, by = "Dep")
+
+correla <- correla %>% 
+  dplyr::select(-Departamento.x) %>% 
+  rename(Departamento = Departamento.y)
+  
+# Grafico de correlacion
+
+ggplot(correla, aes(x = pres_pob, y = per_rural)) +
+  geom_point(color = "green4") +
+  labs(x = "Prestadores de salud por 100.000 habitantes",
+       y = "Porcentaje de población en zona rural") +
+  theme_classic() +
+  theme(axis.title.x = element_text(size = rel(1)),
+        axis.title.y = element_text(size = rel(1)))
+ggsave(paste0(graficas,"pres_rural.png"), width = 12,
+       height = 8)
