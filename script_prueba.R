@@ -55,7 +55,7 @@ municipios <- municipios %>%
          Municipio = if_else(Depmun == 94663, "Mapiripana", Municipio),
          Departamento = if_else(Depmun == 94663, "Guainía", Departamento),
          Departamento = if_else(Dep == 88, "San Andrés Y Providencia", Departamento),
-         Departamento = if_else(Dep == 11, "Bogotá D.c", Departamento),
+         Departamento = if_else(Dep == 11, "Bogotá D.C", Departamento),
          Municipio = if_else(Dep == 11, "Bogotá", Municipio),
          Municipio = if_else(Depmun == 13001, "Cartagena", Municipio))
 
@@ -79,7 +79,7 @@ prestadores <- prestadores %>%
          Departamento = if_else(Municipio == "Buenaventura", "Valle Del Cauca", Departamento),
          Departamento = if_else(Municipio == "Cartagena", "Bolívar", Departamento),
          Departamento = if_else(Municipio == "Santa Marta", "Magdalena", Departamento),
-         Departamento = if_else(Municipio == "Bogotá", "Bogotá D.c", Departamento))
+         Departamento = if_else(Municipio == "Bogotá", "Bogotá D.C", Departamento))
 
 # Se realiza el join de la base de datos de municipios y la de prestadores
 
