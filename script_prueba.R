@@ -291,6 +291,7 @@ correla <- correla %>%
 
 ggplot(correla, aes(x = pres_pob, y = per_rural)) +
   geom_point(color = "green4") +
+  geom_text_repel(size = 3, hjust = 0, vjust = 0.5) +
   labs(x = "Prestadores de salud por 100.000 habitantes",
        y = "Porcentaje de población en zona rural") +
   theme_classic() +
